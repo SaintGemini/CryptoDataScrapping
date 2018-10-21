@@ -24,4 +24,7 @@ for container in containers:
     price_container = container.findAll("span",{"class": "Trsdu(0.3s) "})
     price = price_container[0].text
     
-    print(company + " " + "$"+ price)
+    perc_container = container.findAll("td",{"class": "Va(m) Fz(s) Whs(nw) Ta(end) Pstart(20px) Fw(b) Bxz(bb) Miw(55px) "})
+    percent = perc_container[0].text
+    
+    print(company + "  " + "$"+ price + "  " + percent)
