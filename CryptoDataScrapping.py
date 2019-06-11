@@ -12,7 +12,7 @@ uClient.close()
 page_soup = soup(page_html, "html.parser")
 
 #grabs each product
-containers = page_soup.findAll("tr",{"class":"SimpleDataTableRow"})
+containers = page_soup.findAll("tr",{"class":"simpTblRow Bgc($extraLightBlue):h BdB Bdbc($finLightGrayAlt) Bdbc($tableBorderBlue):h H(32px) Bgc(white) "})
 
 #gets every company name and price of crypto on yahoo finance
 for container in containers:
@@ -24,7 +24,4 @@ for container in containers:
     price_container = container.findAll("span",{"class": "Trsdu(0.3s) "})
     price = price_container[0].text
     
-    perc_container = container.findAll("td",{"class": "Va(m) Fz(s) Whs(nw) Ta(end) Pstart(20px) Fw(b) Bxz(bb) Miw(55px) "})
-    percent = perc_container[0].text
-    
-    print(company + "  " + "$"+ price + "  " + percent)
+    print(company + "  " + "$"+ price)
