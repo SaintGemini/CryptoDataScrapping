@@ -17,14 +17,18 @@ containers = page_soup.findAll("tr",{"class":"simpTblRow Bgc($extraLightBlue):h 
 
 def get_data():
     for container in containers:
+        
         #gets company name
         company = container.td.a["title"]
+        
         #gets current price
         price_container = container.findAll("span",{"class": "Trsdu(0.3s) "})
         price = price_container[0].text
+        
         #gets volume in currency
         volume_container = container.findAll("td", {"class": "Va(m) Ta(end) Pstart(20px) Pend(10px) W(120px) Fz(s)"})
         volume = volume_container[0].text
+        
         #gets percent change
         percent_container = container.findAll("td", {"class" : "Va(m) Ta(end) Pstart(20px) Fw(600) Fz(s)"})
         percent = percent_container[2].text
